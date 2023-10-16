@@ -1,5 +1,6 @@
 package application;
 
+import java.security.InvalidParameterException;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.List;
@@ -51,6 +52,10 @@ public class Program {
 				sc.nextLine();
 			}
 			catch (InputMismatchException e) {
+				System.out.println(e.getMessage());
+				sc.nextLine();
+			}
+			catch (InvalidParameterException e) {
 				System.out.println(e.getMessage());
 				sc.nextLine();
 			}
