@@ -43,7 +43,7 @@ public class Program {
 				
 				if (chessMatch.getPromoted() != null) {
 					System.out.print("Enter piece for promotion (B/N/R/Q): ");
-					String type = sc.nextLine();
+					String type = sc.nextLine().toUpperCase();
 					chessMatch.replacePromotedPiece(type);
 				}
 			}
@@ -58,6 +58,9 @@ public class Program {
 			catch (InvalidParameterException e) {
 				System.out.println(e.getMessage());
 				sc.nextLine();
+				System.out.print("Enter piece for promotion (B/N/R/Q): ");
+				String typeE = sc.nextLine().toUpperCase();
+				chessMatch.replacePromotedPiece(typeE);
 			}
 		}
 		UI.clearScreen();
