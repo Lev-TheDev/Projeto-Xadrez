@@ -96,7 +96,7 @@ public class ChessMatch {
 		if (movedPiece instanceof Pawn) {
 			if ((movedPiece.getColor() == Color.WHITE && target.getRow() == 0) || (movedPiece.getColor() == Color.BLACK && target.getRow() == 7)) {
 				promoted = (ChessPiece)board.piece(target);
-				promoted = replacePromotedPiece("Q");
+				//promoted = replacePromotedPiece("Q");
 			}
 		}
 		
@@ -125,7 +125,7 @@ public class ChessMatch {
 				throw new IllegalStateException("There is no piece to be promoted.");
 			}
 			if (!type.equals("B") && !type.equals("N") && !type.equals("R") && !type.equals("Q")) {
-				return promoted;
+				throw new ChessPromotionException("Invalid type for promotion. You just have these 4 possibilities: (B/N/R/Q).");
 			}
 		
 		Position pos = promoted.getChessPosition().toPosition();
